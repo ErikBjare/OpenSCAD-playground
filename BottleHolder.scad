@@ -1,3 +1,7 @@
+// Increase resolution a bit
+$fa = 6;
+$fs = 0.5;
+
 module cross(width, height, crosswidth=1) {
     union() {
         translate([0, 0, height/2])
@@ -18,7 +22,18 @@ module base() {
     }
 }
 
+module pipettholder() {
+    difference() {
+        cylinder(r=3, h=10);
+        translate([0, 0, 10])
+            cylinder(r=2, h=20, center=true);
+    }
+}
+
 union() {
+    translate([8.5, 8.5, 0])
+        pipettholder();
+    
     difference() {
         union() {
             base();
