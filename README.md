@@ -7,6 +7,10 @@ Years ago, when I first got started with 3D printing, a friend of mine mentioned
 
 So, here I'll dump what I got. Enjoy, I hope you find OpenSCAD as fulfilling as me.
 
-## How to preview
 
-Use [OpenJSCAD](https://openjscad.org/).
+## How to view
+
+Just download OpenSCAD. On Linux systems you are likely to find it in your package manager.
+
+In the future I might set up generation of STL files to a static site (which can be previewed in browser).
+
