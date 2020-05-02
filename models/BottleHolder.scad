@@ -1,10 +1,25 @@
 /*
  * A simple holder for a bottle and pipette.
  *
- * Useful for storing small volumes of liquids such as paint/coloring, extracts (such as from chili peppers), and others.
- * 
- * Note: this is just a draft, a lot of stuff isn't correct.
+ * Useful for storing small volumes of liquids together with a pipette. Useful for paint/coloring, extracts (such as from chili peppers), and solvents (just make sure your bottle is HDPE!).
  */
+
+// Parameters
+height = 15;        // Height of the holder
+base_width = 35;    // Width of the base
+bottle_width = 30;  // Inner diameter of the bottle hole
+pipette_width = 5;  // Inner diameter of the pipette hole
+rounding = 4;       // Outer diameter of pipette holder
+
+// # Manual reference measurements
+//
+// 30ml HDPE bottle: Diameter ~30mm
+// 1ml pipette: Cylinder diameter ~5mm, tip diameter: ?mm
+
+// # First print
+//
+// 28mm bottle width was too tight. 
+// 5mm pipette width fit the tip perfectly.
 
 // Increase resolution a bit
 $fa = 6;
@@ -31,12 +46,6 @@ module base(width, rounding) {
 }
 
 union() {
-    height = 10;
-    base_width = 20;
-    bottle_width = 16; // TODO: Correct measurements to fit the bottles
-    pipette_width = 3; // TODO: Correct measurements to fit the pipettes
-    rounding = 2.5;
-    
     difference() {
         pipette_offset = base_width/2 - rounding;
         
@@ -58,7 +67,7 @@ union() {
     
             // Pipette holder in corner
             translate([pipette_offset, pipette_offset, 0])
-                cylinder(r=rounding, h=10);
+                cylinder(r=rounding, h=height);
         }
     
         // Hole in pipette holder
