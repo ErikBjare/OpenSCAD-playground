@@ -5,13 +5,13 @@
 height = 55;
 
 // Outer width of foot
-outer = 40;
+outer = 38.5;
 
 // Width of the bench foot to extend (assuming square foot)
 benchfoot_w = 33;
 
 // Margin for foot
-clearance = 2;
+clearance = 0.5;
 
 module main() {
     difference() {
